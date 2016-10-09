@@ -27,12 +27,6 @@
     - restart nginx
   when: have_systemd.stdout == "true"
 
-
-- name: Nginx Configure | Reload scripts if using systemd
-  shell: "systemctl daemon-reload"
-  when: have_systemd.stdout == "true"
-
-
 - name: Nginx Configure | Register Nginx as a service
   service:
     name: nginx
